@@ -7,11 +7,10 @@ const ingredients = [
   'Condiments',
 ];
 const list = document.getElementById('ingredients');
-const li = document.createElement('li');
-li.classList.add('item');
-li.textContent = 'Potatoes';
-list.append(li);
-const allLi = ingredients.map((ingredient) => `<li class="item">${ingredient}</li>`).join("");
-console.log(allLi);
-list.innerHTML = allLi;
-console.log(list);
+const allLi = ingredients.map((ingredient) => {
+  const liRef = document.createElement('li');
+liRef.classList.add('item');
+liRef.textContent = ingredient;
+  return liRef
+});
+list.append(...allLi);

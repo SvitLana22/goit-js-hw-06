@@ -6,12 +6,12 @@ function onSubmit(event) {
     // console.log(event.currentTarget.elements.email.value)
     if (email.value === '' || password.value === '') {
         return alert `Заповніть всі поля форми`
-    } else {
-        const userLogin = {
-            email: email.value,
-            password:password.value
-        }
-        console.log(userLogin)
     }
-}
+    const userLogin = {
+        email: email.value,
+        password:password.value
+    }
+    console.log(userLogin)
+        formRef.reset()
+    }
 console.log(onSubmit)
